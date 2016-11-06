@@ -16,11 +16,11 @@ class String {
       String substring(int start, int end) {
          int length = end - start;
          char buffer[length + 1];
-         for (char* x = value + start; x < value + length; x++) {
-           printf("%c", *(x));
+         int pos = 0;
+         for (char* x = value + start; x < value + length; x++, pos++) {
+           buffer[pos] = *x;
          }
          buffer[length + 1] = '\0';
-         printf("%s\n", buffer);
          return String(buffer);
       }
 };
